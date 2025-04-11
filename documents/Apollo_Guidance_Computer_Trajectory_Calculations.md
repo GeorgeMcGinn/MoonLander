@@ -83,6 +83,7 @@ This comparison underscores the AGC's efficiency for real-time tasks and mission
 ## Conclusion
 
 The AGC’s use of Heun’s method, with second-order accuracy ($O(h^2)$) and a 0.5-second step size, was a practical solution for its hardware limitations, delivering reliable guidance for lunar landings. Mission control complemented this with RK4 simulations ($O(h^4)$) on IBM mainframes, detecting errors through telemetry comparisons and advising astronauts via voice communication. The landing was a collaborative effort, blending the AGC’s automated precision with the astronauts’ manual control. Using the throttle lever and LEM displays, astronauts made real-time adjustments, exercising autonomy during critical phases like the Apollo 11 landing. This synergy of technology and human adaptability ensured mission success.
+
 ---
 
 ## Citations

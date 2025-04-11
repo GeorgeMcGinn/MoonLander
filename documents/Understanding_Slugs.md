@@ -2,15 +2,11 @@
 
 NASA primarily uses the International System of Units (SI) for its scientific and engineering calculations. In this system, force is calculated using Newton's second law as:
 
-$$
-\text{Force} = \text{Mass} \times \text{Acceleration}
-$$
+$\text{Force} = \text{Mass} \times \text{Acceleration}$
 
 Here, mass is measured in kilograms (kg), acceleration in meters per second squared (m/s²), and the resulting force in newtons (N). One newton is defined as:
 
-$$
-1 \, \text{N} = 1 \, \text{kg} \cdot \text{m/s}^2
-$$
+$1 \, \text{N} = 1 \, \text{kg} \cdot \text{m/s}^2$
 
 This coherent system eliminates the need for additional conversion factors, making it straightforward and consistent across various applications.
 
@@ -22,19 +18,15 @@ However, when working with U.S. customary units—such as pounds (lbs), feet (ft
 
 The slug is defined as the mass that accelerates at \(1 \, \text{ft/s}^2\) when a force of \(1 \, \text{lbf}\) is applied. Mathematically:
 
-$$
-1 \, \text{slug} = 32.174 \, \text{lbm}
-$$
+$1 \, \text{slug} = 32.174 \, \text{lbm}$
 
 where lbm stands for pound-mass. Similarly:
 
-$$
-1 \, \text{lbf} = 32.174 \, \text{lbm} \cdot \text{ft/s}^2
-$$
+$1 \, \text{lbf} = 32.174 \, \text{lbm} \cdot \text{ft/s}^2$
 
 This definition aligns with Newton's second law (\(F = m \cdot a\)) within the U.S. customary system. The slug simplifies calculations in this framework by eliminating the need for a proportionality constant.
 
-For a 2-slug mass accelerating at 3 ft/s², the force is $2×3=6 lbf2 \times 3 = 6 \, \text{lbf}2 \times 3 = 6 \, \text{lbf}$. In SI, a 2-kg mass at 3 m/s² yields $2×3=6 N2 \times 3 = 6 \, \text{N}2 \times 3 = 6 \, \text{N}$, showing the directness of both systems when used consistently.
+For a 2-slug mass accelerating at 3 ft/s², the force is $ 2×3=6 lbf2 \times 3 = 6 \, \text{lbf}2 \times 3 = 6 \, \text{lbf} $. In SI, a 2-kg mass at 3 m/s² yields $2 ×3=6 N2 \times 3 = 6 \, \text{N}2 \times 3 = 6 \, \text{N} $, showing the directness of both systems when used consistently.
 
 ---
 

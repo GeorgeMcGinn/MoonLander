@@ -24,21 +24,21 @@ Current State: At time \( t \), the LEM has a state vector representing its posi
 **NOTE:** Telemetry provides this data, typically updated every second in the simulation.
 
 Equations of Motion: These are ODEs, like:
-- \( \frac{d(\text{altitude})}{dt} = \text{vertical speed} \)
-- \( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} \) (from gravity and thrust)  
-In general: \( \frac{d\mathbf{y}}{dt} = \mathbf{f}(t, \mathbf{y}, u) \), where \( u \) is the pilot’s control input (e.g., thrust).
+- $( \frac{d(\text{altitude})}{dt} = \text{vertical speed} )$
+- $( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} ) (from gravity and thrust)$  
+In general: $( \frac{d\mathbf{y}}{dt} = \mathbf{f}(t, \mathbf{y}, u) ),$ where $( u )$ is the pilot’s control input (e.g., thrust).
 
-**RK4 Steps:** RK4 computes the next state \( \mathbf{y}(t + h) \) over a small time step \( h \) (e.g., 0.1 seconds) using four evaluations of \( \mathbf{f} \):
-- \( k_1 = \mathbf{f}(t, \mathbf{y}, u) \)
-- \( k_2 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_1, u) \)
-- \( k_3 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_2, u) \)
-- \( k_4 = \mathbf{f}(t + h, \mathbf{y} + h k_3, u) \)  
+**RK4 Steps:** RK4 computes the next state $( \mathbf{y}(t + h) )$ over a small time step $( h )$ (e.g., 0.1 seconds) using four evaluations of $( \mathbf{f} )$:
+- $( k_1 = \mathbf{f}(t, \mathbf{y}, u) )$
+- $( k_2 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_1, u) )$
+- $( k_3 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_2, u) )$
+- $( k_4 = \mathbf{f}(t + h, \mathbf{y} + h k_3, u) )$  
 Then:  
-- \( \mathbf{y}(t + h) = \mathbf{y}(t) + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) \)
+- $( \mathbf{y}(t + h) = \mathbf{y}(t) + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) )$
 
 Prediction: Repeat this process over multiple steps to forecast the trajectory (e.g., over the next 10 seconds), assuming the pilot holds the current inputs constant.
 
-Updating: As new telemetry arrives, ground control gets an updated state. They restart RK4 from this new \( \mathbf{y}(t) \), incorporating the pilot’s latest inputs, and recompute the predicted trajectory. This is a continuous, iterative process, not a one-time calculation.
+Updating: As new telemetry arrives, ground control gets an updated state. They restart RK4 from this new $( \mathbf{y}(t) )$, incorporating the pilot’s latest inputs, and recompute the predicted trajectory. This is a continuous, iterative process, not a one-time calculation.
 
 ## Correcting the LEM’s Trajectory to the Desired One
 
@@ -48,7 +48,7 @@ Ground control’s goal is to ensure the LEM lands safely at the target site wit
 - In the simulation, the desired trajectory isn’t a fixed path but a target state at landing: vertical speed ≤ 5 ft/s and horizontal speed ≤ 5 ft/s at zero altitude.
 
 **Predict with RK4:**
-- Using the current state and inputs, RK4 generates \( \mathbf{y}_{\text{predicted}}(t + \Delta t) \) until landing.
+- Using the current state and inputs, RK4 generates $( \mathbf{y}_{\text{predicted}}(t + \Delta t) )$ until landing.
 
 **Compare:**
 - Compare the predicted state (e.g., final speeds) to the desired state at key times.
