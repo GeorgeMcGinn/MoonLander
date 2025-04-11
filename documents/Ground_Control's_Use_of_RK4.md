@@ -16,7 +16,7 @@ For a manual landing, ground control relies on telemetry data about the LEM’s 
 
 RK4 doesn’t “update” the LEM’s trajectory directly—it predicts it. The LEM’s current trajectory is its actual path, determined by its state (position, velocity, etc.) and the pilot’s inputs (throttle, attitude adjustments). Ground control uses RK4 to model this trajectory forward in time, step-by-step, based on the latest telemetry received. Here’s how it works:
 
-Current State: At time \( t \), the LEM has a state vector representing its position and velocity. The simulation uses a 2D model, so this includes:
+Current State: At time ( t ), the LEM has a state vector representing its position and velocity. The simulation uses a 2D model, so this includes:
 - Altitude (vertical position)
 - Vertical speed
 - Horizontal position
@@ -24,17 +24,17 @@ Current State: At time \( t \), the LEM has a state vector representing its posi
 **NOTE:** Telemetry provides this data, typically updated every second in the simulation.
 
 Equations of Motion: These are ODEs, like:
-- $\( \frac{d(\text{altitude})}{dt} = \text{vertical speed} \)$
-- $\( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} \) (from gravity and thrust)$  
+- $( \frac{d(\text{altitude})}{dt} = \text{vertical speed} )$
+- $( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} \) (from gravity and thrust)$  
 In general: $\( \frac{d\mathbf{y}}{dt} = \mathbf{f}(t, \mathbf{y}, u) \),$ where $\( u \)$ is the pilot’s control input (e.g., thrust).
 
-**RK4 Steps:** RK4 computes the next state $\( \mathbf{y}(t + h) \)$ over a small time step $\( h \)$ (e.g., 0.1 seconds) using four evaluations of $\( \mathbf{f} \)$:
-- $\( k_1 = \mathbf{f}(t, \mathbf{y}, u) \)$
-- $\( k_2 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_1, u) \)$
-- $\( k_3 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_2, u) \)$
-- $\( k_4 = \mathbf{f}(t + h, \mathbf{y} + h k_3, u) \)$  
+**RK4 Steps:** RK4 computes the next state $( \mathbf{y}(t + h) )$ over a small time step $( h )$ (e.g., 0.1 seconds) using four evaluations of $\( \mathbf{f} \)$:
+- $( k_1 = \mathbf{f}(t, \mathbf{y}, u) )$
+- $( k_2 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_1, u) )$
+- $( k_3 = \mathbf{f}(t + h/2, \mathbf{y} + (h/2)k_2, u) )$
+- $( k_4 = \mathbf{f}(t + h, \mathbf{y} + h k_3, u) )$  
 Then:  
-- $\( \mathbf{y}(t + h) = \mathbf{y}(t) + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) \)$
+- $( \mathbf{y}(t + h) = \mathbf{y}(t) + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4) )$
 
 Prediction: Repeat this process over multiple steps to forecast the trajectory (e.g., over the next 10 seconds), assuming the pilot holds the current inputs constant.
 
