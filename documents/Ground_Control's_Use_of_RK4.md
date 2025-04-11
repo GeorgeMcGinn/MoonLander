@@ -16,7 +16,7 @@ For a manual landing, ground control relies on telemetry data about the LEM’s 
 
 RK4 doesn’t “update” the LEM’s trajectory directly—it predicts it. The LEM’s current trajectory is its actual path, determined by its state (position, velocity, etc.) and the pilot’s inputs (throttle, attitude adjustments). Ground control uses RK4 to model this trajectory forward in time, step-by-step, based on the latest telemetry received. Here’s how it works:
 
-Current State: At time \( t \), the LEM has a state vector representing its position and velocity. The simulation uses a 2D model, so this includes:
+Current State: At time ( t ), the LEM has a state vector representing its position and velocity. The simulation uses a 2D model, so this includes:
 - Altitude (vertical position)
 - Vertical speed
 - Horizontal position
@@ -25,7 +25,7 @@ Current State: At time \( t \), the LEM has a state vector representing its posi
 
 Equations of Motion: These are ODEs, like:
 - $( \frac{d(\text{altitude})}{dt} = \text{vertical speed} )$
-- $( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} ) (from gravity and thrust)$  
+- $( \frac{d(\text{vertical speed})}{dt} = \text{acceleration} )$ (from gravity and thrust)
 In general: $( \frac{d\mathbf{y}}{dt} = \mathbf{f}(t, \mathbf{y}, u) ),$ where $( u )$ is the pilot’s control input (e.g., thrust).
 
 **RK4 Steps:** RK4 computes the next state $( \mathbf{y}(t + h) )$ over a small time step $( h )$ (e.g., 0.1 seconds) using four evaluations of $( \mathbf{f} )$:

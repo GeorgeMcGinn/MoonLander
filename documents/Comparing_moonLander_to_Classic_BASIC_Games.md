@@ -80,7 +80,7 @@ In the 1970s and 1980s, *Creative Computing* magazine introduced players to the 
 ## Comparison of Lunar Landing Simulations
 
 
-| Category               | *moonLander.\* (.c, .bas, .py)*                                         | *LUNAR.bas*                                  | *LEM.bas*                                      |
+| Category               | *moonLander.\* (.c, .rs, .bas, .py)*                                         | *LUNAR.bas*                                  | *LEM.bas*                                      |
 |------------------------|----------------------------------------------------------|----------------------------------------------|------------------------------------------------|
 | **Gameplay Mechanics** | - Fine-grained control over vertical and horizontal burns<br>- Delayed feedback (6.6s)<br>- Abort option using ascent fuel<br>- Continuous, real-time adjustments | - Single burn rate input every 10 seconds<br>- Turn-based, minimal control | - Inputs: time, thrust percentage, attitude angle<br>- Turn-based with more control than *LUNAR* |
 | **Physics Simulation** | - Advanced RK4 method for precise trajectory calculations<br>- Realistic lunar gravity and exhaust velocity | - Basic physics model with constant gravity<br>- Simplified thrust equation | - Includes attitude effects<br>- More detailed than *LUNAR* but still simplified |
