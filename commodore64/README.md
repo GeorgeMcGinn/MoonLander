@@ -13,6 +13,7 @@
 **GitHub:** [Source Code & Binaries](https://github.com/GeorgeMcGinn/MoonLander/commodore64)
 
 ![Terminal screenshot of Moon Lander game showing altitude and burn inputs](../images/lunarlander-screenshot.png)
+
 Screenshot of the real-time version
 
 ---
