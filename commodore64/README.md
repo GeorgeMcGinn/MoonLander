@@ -225,11 +225,12 @@ You are free to share and adapt the work under these terms:
 ---
 ## Get Involved
 
-The [GitHub repo](https://github.com/GeorgeMcGinn/MoonLander/commodore64) welcomes:
+The [GitHub Lunar Lander Repo](https://github.com/GeorgeMcGinn/MoonLander/tree/main/commodore64) welcomes:
 
-- Bug reports (especially for QB64/Python ports)
+- Bug reports 
 - Pull requests for new features
 - Documentation improvements
+- Slick game GUI
 
 ---
 
