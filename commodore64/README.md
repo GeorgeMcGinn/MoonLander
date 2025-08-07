@@ -10,7 +10,7 @@
 
 **Platforms:** Commodore 64/128  
 **Languages:** Commodore BASIC v2.0  
-**GitHub:** [Source Code & Binaries](https://github.com/GeorgeMcGinn/MoonLander/commodore64)
+**GitHub:** [Source Code & Binaries](https://github.com/GeorgeMcGinn/MoonLander/tree/main/commodore64)
 
 ![Terminal screenshot of Moon Lander game showing altitude and burn inputs](../images/lunarlander-screenshot.png)
 
