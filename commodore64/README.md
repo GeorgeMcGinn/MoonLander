@@ -200,6 +200,16 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 
 ## Release Notes
 
+### Version 1.5 (August 2025)
+
+#### Real-Time Joystick Version
+- Corrected floating-point issues (converted them to scaled integer processing)
+- Improved thrust control for fine tuning abilities and enhanced emergency thrust capabilities (to simulate somewhat an analog joystick)
+- Live dashboard now color-coded for optimal, normal and dangerous contitions
+- Revamped vBurn and Hburn display to show NOMINAL conditions
+- Added a splash screen
+
+
 ### Version 1.0 (August 2025)
 
 #### Text-Based Version
@@ -216,15 +226,6 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 - Live dashboard with continuous updates
 - Optimized for 1 MHz 6510 processor performance
 
-
-### Version 1.5 (August 2025)
-
-#### Real-Time Joystick Version
-- Corrected floating-point issues (converted them to scaled integer processing)
-- Improved thrust control for fine tuning abilities and enhanced emergency thrust capabilities (to simulate somewhat an analog joystick)
-- Live dashboard now color-coded for optimal, normal and dangerous contitions
-- Revamped vBurn and Hburn display to show NOMINAL conditions
-- Added a splash screen
 
 ---
 
