@@ -21,6 +21,8 @@ Screenshot of the real-time version
 ## Documents
 - **[C64: Lunar Lander Technical Details](Technical_Details.md)**
 - **[C64: Apollo Lunar Lander Simulator for Commodore 64](Apollo_Lunar_Lander_Simulator_for_Commodore_64_A_Journey_from_Modern_Computing_to_1980s_Hardware.md)**
+- **[Apollo Lunar Lander Simulator - Technical Developer Documentation (Real-Time Joystick Version)](C64_Technical_Docs-lunarlander.md)**
+
 
 ---
 ## Introduction
@@ -50,7 +52,7 @@ An authentic Apollo Lunar Module landing simulator for the Commodore 64 availabl
 
 - **Real-Time Control**: Digital joystick control at 10 FPS with immediate response
 - **Emergency Response**: Automatic 10× faster thrust response during dangerous descents
-- **Live Dashboard**: Continuous flight data updates with altitude change tracking
+- **Live Dashboard**: Continuous flight data updates with altitude change tracking, including color status readings
 - **Action Piloting**: Real-time decision making with physics constraints
 
 ---
@@ -168,6 +170,11 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 4. **Final Approach**: Target 10-15 ft/s vertical for final descent
 5. **Touchdown**: Fine-tune to ≤5 ft/s in both axes
 
+### Color Coding System (Real-Time Version)
+- **YELLOW**: Normal/Caution - default color
+- **GREEN**: Optimal/Safe - target conditions
+- **RED**: Danger/Critical - requires immediate attention
+
 ### Landing Results (Both Versions)
 
 - **Perfect Landing**: Both speeds ≤ 5 ft/s
@@ -208,6 +215,16 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 - Emergency response system with variable thrust rates
 - Live dashboard with continuous updates
 - Optimized for 1 MHz 6510 processor performance
+
+
+### Version 1.5 (August 2025)
+
+#### Real-Time Joystick Version
+- Corrected floating-point issues (converted them to scaled integer processing)
+- Improved thrust control for fine tuning abilities and enhanced emergency thrust capabilities (to simulate somewhat an analog joystick)
+- Live dashboard now color-coded for optimal, normal and dangerous contitions
+- Revamped vBurn and Hburn display to show NOMINAL conditions
+- Added a splash screen
 
 ---
 

@@ -37,7 +37,7 @@
 370 print "     apollo lunar lander simulator"
 380 print "======================================="
 390 print
-400 print "note: 
+400 print "note: "
 410 print "the game also enforces a time delay"
 420 print "that the real astronauts experienced."
 430 print "the time delay is 6.6 seconds."
@@ -104,7 +104,7 @@
 3090 np=np-1:goto 3020
 4000 rem *** trajectory analysis subroutine
 4010 te=al/vd:if te<0 then return
-4020 pv=vd+gv*te:ps=hs
+4020 pv=vd+na*te:ps=hs 
 4030 ve=pv-t1:he=ps-t2:va=int(ve*0.1):ha=int(he*0.05)
 4040 if abs(ve)<=t1 and abs(he)<=t1 then ic=1:va=0:ha=0 else ic=0
 4050 if np>=10 then return
