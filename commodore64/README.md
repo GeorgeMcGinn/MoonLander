@@ -148,11 +148,18 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 
 ### Real-Time Joystick Version Controls
 
-- **UP**: Decrease vertical thrust (1 lb/s normal, 5 lb/s when thrust >30 lb/s)
-- **DOWN**: Increase vertical thrust (1 lb/s normal, 10 lb/s when speed ≥400 ft/s)
-- **LEFT**: Thrust left to reduce rightward velocity
-- **RIGHT**: Thrust right to reduce leftward velocity
+- **UP**: Decrease vertical thrust (1lb/s normal, 5lb/s when thrust >30lb/s, .1lbs/s when thrust <10lbs/s)
+- **DOWN**: Increase vertical thrust (1lb/s normal, 10lb/s when speed ≥400 ft/s, .1lbs/s when thrust <10lbs/s)
+- **LEFT**: Thrust left to reduce rightward velocity (Standard 1lbs/s increment)
+- **RIGHT**: Thrust right to reduce leftward velocity (Standard 1lbs/s increment)
 - **FIRE BUTTON**: Abort to orbit (hold for 0.3 seconds)
+
+**Thrust based on Conditions**:
+- When thrust is zero, jump to 10lbs/s initial valye
+- When displayed thrust <10lbs/s, use .1lbs/s increments/decrements for fine control
+- Standard 1lb/s increment, and emergency 10lbs/s if vertical velocity >=400ft/s
+- When displayed thrust >=30lbs/s, use 5lbs/s decrements
+- Standard 1lb/s increment/decrement rate 
 
 ### Strategy Tips
 
@@ -174,6 +181,14 @@ Land safely with both vertical and horizontal speeds ≤ 5 ft/s for a perfect la
 - **YELLOW**: Normal/Caution - default color
 - **GREEN**: Optimal/Safe - target conditions
 - **RED**: Danger/Critical - requires immediate attention
+
+**Color Conditions**:
+- **Altitude**: RED if $>7500$ft (ascending) or $≤100ft$ (landing imminent), GREEN if 100.1-750ft (approach zone), YELLOW otherwise
+- **Difference**: RED if $≥0$ (ascending), GREEN if -1 to -0.5 (optimal 5-10 ft/s descent), YELLOW otherwise  
+- **Vertical Speed**: RED if $<0$ (ascending) or $>200$ft/s (dangerous descent), GREEN if $vd≤15$ ft/s (safe landing speed), YELLOW if hovering (`vd=0`) or moderate descent
+- **Horizontal Speed**: GREEN if $|hs|≤5$ft/s (safe drift), RED if $|hs|>50$ft/s (dangerous lateral motion), YELLOW otherwise
+- **Fuel**: RED if $≤200$lbs (critically low), YELLOW otherwise
+
 
 ### Landing Results (Both Versions)
 
